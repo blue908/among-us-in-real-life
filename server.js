@@ -570,7 +570,7 @@ function setTaskbarUpdateTimeout(){
             ratio: getRatioOfTasksDone()
         })
         taskbarUpdateTimeout = null;
-    }, 30_000)
+    }, gameSettings.taskbarDelay * 1000)
 }
 
 /**
@@ -608,20 +608,22 @@ function distributeRoles(){
     
     if("advancedRoleNumbers" in gameSettings){
         const roleNums = pickElementsFromWeightedArray(gameSettings.advancedRoleNumbers, 1)[0];
-        numEvil = Math.floor(roleNums.numEvil);
-        numNeutral = Math.floor(roleNums.numNeutral);      
-
-        //numbers after a decimal is the probability of an extra role
-        if(Math.random() < (roleNums.numEvil % 1))
-            numEvil++;
-
-        if(Math.random() < (roleNums.numNeutral % 1))
-            numNeutral++;
-
+        numEvil = roleNums.numEvil;
+        numNeutral = roleNums.numNeutral;      
     } else {
         numEvil = gameSettings.numEvil;
         numNeutral = gameSettings.numNeutral;
     }
+
+    //numbers after a decimal is the probability of an extra role
+    if(Math.random() < (numEvil % 1))
+        numEvil++;
+
+    if(Math.random() < (numNeutral % 1))
+        numNeutral++;
+
+    numEvil = Math.floor(numEvil)
+    numNeutral = Math.floor(numNeutral)
 
     players.forEach(player => {
         player.role = null;
@@ -640,7 +642,7 @@ function distributeRoles(){
             else 
                 teamToAssign = "neutral";
             
-            let chosenRole = pickElementsFromWeightedArray(Object.values(roles[teamToAssign]), 1)[0];
+            let chosenRole = pickElementsFromWeightedArray(Object.values(rolesClone[teamToAssign]), 1)[0];
 
             const playerToAssignRoleTo = players[randPlayerIndex];
             playerToAssignRoleTo.role = chosenRole;

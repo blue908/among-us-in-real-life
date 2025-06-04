@@ -112,7 +112,7 @@ input[type="text"]:focus {
     width: 0%;
     background-color: #007bff;     /* Matches the fill color */
     border-radius: 10px;           /* Rounded corners */
-    transition: width 10s ease-in-out;
+    transition: width 4s ease-in-out;
 }
 
 .task{

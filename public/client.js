@@ -234,9 +234,10 @@ function startGame(data){
     executionerTarget = "";
     selectedSilenceTarget = "";
 
+    getSettings(data.allSettings);
     playersUpdate(data.players, false);
     updateTaskbar(0, false);
-    getSettings(data.allSettings);
+    
 
     if(thisPlayerName !== "host")
     {
@@ -455,20 +456,28 @@ function updateNumTasksCompleted(){
 }
 
 function updateTaskbar(ratio, animate = true){
-    const fill = document.getElementById("custom-progress-fill");
+    const taskbar = document.getElementById("taskbar");
 
-    if(animate){
-        if (fill && ratio >= 0 && ratio <= 1) {
+    if(allSettings.gameSettings.taskbarEnabled){ //only show/update if the taskbar is enabled
+        taskbar.style.display = "block"
+        const fill = document.getElementById("custom-progress-fill");
+
+        if(animate){
+            if (fill && ratio >= 0 && ratio <= 1) {
+                fill.style.width = (ratio * 100) + "%";
+            }
+        } else {
+            // temporarily disable transition
+            fill.style.transition = "none";
             fill.style.width = (ratio * 100) + "%";
+
+            void fill.offsetWidth; // forces reflow
+            fill.style.transition = ""; // restores to CSS-defined value
         }
     } else {
-         // temporarily disable transition
-        fill.style.transition = "none";
-        fill.style.width = (ratio * 100) + "%";
-
-        void fill.offsetWidth; // forces reflow
-        fill.style.transition = ""; // restores to CSS-defined value
+        taskbar.style.display = "none"
     }
+    
 }
 
 //-------- host -----------------
