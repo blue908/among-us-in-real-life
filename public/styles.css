@@ -1,0 +1,217 @@
+body{
+    background-color: rgb(20, 20, 24);
+    color: rgb(240, 240, 245);
+}
+
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+s
+p {
+    white-space: "pre-line",
+}
+
+.bold{ font-weight: bold; }
+
+.blue { color: #2a91ff; }
+.green { color: #00ff80; }
+.yellow { color: #fbff00; }
+.red { color: #ff5537; }
+
+#conntectionStatusText{
+    background-color: rgb(20, 20, 24);
+}
+
+button {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    font-size: 20px;
+    padding: 5px 18px;
+    border: none;
+    margin-bottom: 5px;
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #003d80; /* Even darker when clicked */
+}
+
+#aliveInteractionButtons{
+    display: inline-block;
+}
+
+#hostSettingsTextArea {
+    background-color: #2c3e50;
+    border-width:0;
+    color: white;
+    font-family: "Courier New", monospace;
+  }
+
+button#swapHostView {
+    font-size: x-large;
+    padding: 5px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: #e2b3b3b0;
+    bottom: 10px;
+    position: fixed;
+}
+
+div#hostMeetingPanel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+
+button#emergencyMeetingButton {
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+    /*flex-shrink: 0; /* Prevent shrinking */
+    aspect-ratio: 1 / 1; /* Maintain perfect circle */
+
+}
+
+button#endMeetingButton, button#everyoneIsHereButton {
+    margin-top: 10px;
+}
+
+input[type="text"] {
+    width: 50%;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 0px;
+    outline: none;
+}
+input[type="text"]:focus {
+    box-shadow: 0 0 20px rgba(231, 243, 255, 0.5); /* Add a glow effect */
+}
+
+.custom-progress {
+    width: 100%;
+    height: 15px;
+    background-color: #2c3e50;     /* Matches the track */
+    border-radius: 10px;
+    overflow: hidden;
+}
+  
+.custom-progress-fill {
+    height: 100%;
+    width: 0%;
+    background-color: #007bff;     /* Matches the fill color */
+    border-radius: 10px;           /* Rounded corners */
+    transition: width 10s ease-in-out;
+}
+
+.task{
+    background-color: #2c3e50; /* Dark background (change as needed) */
+    color: white; /* Text color */
+    padding: 15px; /* Space inside the box */
+    border-radius: 10px; /* Rounded edges */
+    margin: 10px 0; /* Space between tasks */
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between checkbox and text */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+.votingCandidate{
+    background-color: #2c3e50; /* Dark background (change as needed) */
+    color: white; /* Text color */
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px; /* Rounded edges */
+    margin: 10px 0; /* Space between tasks */
+    gap: 20px; /* Space between checkbox and text */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Ensures vertical alignment */
+    width: 90%; 
+}
+
+.task input[type="checkbox"] {
+    transform: scale(1.5); /* Make checkbox bigger */
+}
+
+.taskTitle {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.taskLocationText {
+    font-size: 14px;
+    color: rgb(162, 162, 190);
+    margin-top: 0;
+}
+
+.taskDesc {
+    font-size: 14px;
+    color: #d0d0d0; /* Lighter text color */
+    margin: 0;
+}
+
+@keyframes alarmFlash {
+    0% ,40%{
+        background-color: rgb(70, 0, 0);
+    }
+    50%, 90% {
+        background-color: rgb(196, 0, 0);
+    }
+    100% {
+        background-color: rgb(70, 0, 0);
+    }
+}
+
+
+
+.sabotageTask {
+    background-color: rgb(150, 0, 0);
+    border: 2px solid #ffd5d5;
+}
+
+.urgentSabotageTask {
+    background-color: rgb(207 0 0);
+    animation: alarmFlash 2s infinite ;
+}
+
+.sabotageLocationText{
+    color: rgb(255, 171, 171);
+}
+
+
+.overlayBackground{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99
+}
+
+.overlayBody {
+    background: #1d2933;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    border-radius: 15px;
+    text-align: center;
+}

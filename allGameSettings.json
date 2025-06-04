@@ -1,0 +1,90 @@
+{
+    "roles": {
+        "evil": {
+            "imposter": {
+                "message": "a regular evil role with no special abilities.",
+                "weight": 1
+            },
+            "silencer": {
+                "message": "select a person at any time to be silenced for the next meeting.",
+                "specialProperties": ["silencer"],
+                "weight": 1
+            },
+            "poisoner": {
+                "message": "you may poison people instead of killing them normally.",
+                "weight": 1
+            }
+        },  
+
+        "good": {
+            "crewmate": {
+                "message": "a regular good role, nothing special."
+            }
+        },
+
+        "neutral": {
+            "jester": {
+                "message": "you win if you get voted out.",
+                "specialProperties": ["jester"]
+            },
+            "executioner": {
+                "message": "you win if your target gets voted out.",
+                "specialProperties": ["executioner"]
+            }
+        }
+    },
+    
+    "tasks": [
+        {
+            "name": "test",
+            "location": ["test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test"],
+            "desc": "test",
+            "weight": 1
+        }
+    ],
+
+    
+    "sabotages": [
+        {
+            "name": "oxygen",
+            "location": "storage",
+            "desc": "fix oxygen",
+            "timeLeft": 40
+        },
+        {
+            "name": "reactor",
+            "location": "reactor",
+            "specialProperties": ["two_player_fix"],
+            "desc": "fix reactor",
+            "timeLeft": 50
+        },
+        {
+            "name": "comms",
+            "location": "kitchen",
+            "specialProperties": ["no_reporting_bodies"],
+            "desc": "fix comms"
+        }         
+    ],
+    
+    "gameSettings": {
+        "numEvil": 1,
+        "numNeutral": 0,
+        "tasksPerPlayer": 4,
+        "weightMultiplierAfterTaskWasChosen": 0.5,
+        "neutralChance": 0,
+        "confirmEjects": true,
+        "weightMultiplierAfterRoleWasChosen": 0.3,
+        "advancedRoleNumbers": [
+            {
+                "weight": 0,
+                "numEvil": 1,
+                "numNeutral": 2.5
+            },
+            {
+                "weight": 1,
+                "numEvil": 1,
+                "numNeutral": 1.3
+            }
+        ]
+    }
+}

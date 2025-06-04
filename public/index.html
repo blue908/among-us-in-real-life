@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Among Us in Real Life</title>
+</head>
+<body>
+    <div id="roleOverlay" class="overlayBackground" style="display: none;">
+        <div class="overlayBody">
+            <h2>role</h2>
+            <p id="roleInfoText">placeholder</p>
+
+            <div id="actionsContainer">       
+                <button id="openSabotageMenuButton">sabotage</button>
+                <button id="openSilenceMenuButton">silence</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="silenceOverlay" class="overlayBackground" style="display: none;">
+        <div class="overlayBody">
+            <h2>silence</h2>
+                <div id="silenceList"></div>
+                <!--<button id="skipSilenceButton" style="display: none;">skip vote</button>-->
+        </div>
+    </div>
+            
+
+    <div id="sabotageOverlay" class="overlayBackground" style="display: none;">
+        <div class="overlayBody">
+            <p>sabotage state: <span id="evilSabotageStatus">ready</span> <span id="sabotageCooldownText"></span></p>
+            <p id="evilSabotageSchedule">no sabotage scheduled</p>
+                <div id="sabotageSelectionButtons">
+                    <p id="sabotageDelayText">delay: 0</p>
+                    <button class="sabotageDelayButton">0</button>
+                    <button class="sabotageDelayButton">5</button>
+                    <button class="sabotageDelayButton">10</button>
+                    <button class="sabotageDelayButton">20</button>
+                    <!--<input type="number" placeholder="custom"class="sabotageDelayButton"></input>-->
+        
+                    <p>type of sabotage</p>
+                    <div id="sabotageTriggerContainer"></div>
+
+                </div>
+            <br>
+            <button id="cancelSabotageButton" style="display: none;">cancel scheduled sabotge</button>
+        </div>
+    </div>
+
+    <p id = "connectionStatusText">😐 never connected</p>
+    <button id = "leaveGameButton" style = "display: none">leave game</button>
+
+    <div id="hostControls" style="display:none">
+        <div id="hostControlPanel">
+            <button id="startGameButton">start game</button>
+            <button id="endGameButton">end game</button>
+        </div>
+        <button id="swapHostView">📢</button>
+        <div id="hostMeetingPanel" style = "display: none;">
+            <button id="emergencyMeetingButton">emergency meeting!</button>
+            <button id="everyoneIsHereButton">everyone is here</button>
+            <button id="endMeetingButton">end meeting</button>
+        </div>
+       
+    </div>
+
+    <div id = "nameInput">
+        <h1>enter name</h1>
+        <input id = "nameInputBox" type="text">
+        <button id = "joinGame">join</button>
+    </div>
+
+    <div id ="players" style="display: none">
+        <h1>players</h1>
+        <ul id="playerList"></ul>
+    </div>
+
+    <div id="gameUI" style="display: none">
+        <div id="interactionButtons">
+            <button id="roleButton">role</button>
+            <div id="aliveInteractionButtons">
+                <button id="reportBodyButton">report body</button>
+                <button id="iDiedButton">i died</button>
+            </div>
+        </div>
+        <div id="tasks">
+            <h1 style="margin-bottom: 0px">tasks</h1>
+            <div class="custom-progress">
+                <div class="custom-progress-fill" id="custom-progress-fill"></div>
+            </div>
+            
+            <div id="taskContainer">
+                <p>you have no tasks</p>
+            </div>
+        </div>
+
+        <template id="taskTemplate">
+            <div class = "task">
+                <input type="checkbox" class = "taskCheckbox">
+                <div>
+                    <strong class="taskTitle">placeholder task title</strong>
+                    <p class="taskLocationText">(placeholder location)</p> 
+                    <p class="taskDesc">placeholder task description</p>
+                </div>
+            </div>
+        </template>
+
+        <div id="meeting" style="display: none">
+            <h1 id = "meetingText">meeting!</h1>
+                <div id="votingPanel" style="display: none;">
+                    <div id="votingList"></div>
+                    <button id="skipButton" style="display: none;">skip vote</button>
+                </div>
+        </div>
+    </div>
+
+    <template id="votingCandidateTemplate">
+        <div class="votingCandidate">
+            <h3 class="candidateName">candidate name</h3>
+            <button class="voteButton">vote</button>
+        </div>
+    </template>
+
+    <script src="client.js"></script>
+</body>
+</html>
