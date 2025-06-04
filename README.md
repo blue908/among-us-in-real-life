@@ -1,6 +1,6 @@
 # Among Us In Real Life
 
-This is a Node.js web application that allows you to play Among Us in real life.
+This is a web application made with Node.js that allows you to play Among Us in real life.
 
 ## Features
 - Host and Player UI
@@ -21,6 +21,7 @@ You can configure tasks, sabotages, roles, and various settings easily using JSO
 - Everyone else should should type in your computer's local ip address.
   
 ###### *If that didn't make sense, you can go [here](https://example.com/) for a simpler guide.*
+*(links to the wiki just go to example.com right now because the wiki is not done)*
 
 ## Starting the Game
 - To start the game, someone has to connect as the host. To do this, simply put "host" as your name.

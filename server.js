@@ -481,23 +481,20 @@ function distributeTasks(){
     let tasksCopy = structuredClone(tasks);
 
     players.forEach(player => {
-        if(player.playerName !== "Marianne")
-        {   
-            playerTasks = structuredClone(pickElementsFromWeightedArray(tasksCopy, gameSettings.tasksPerPlayer));
+        playerTasks = structuredClone(pickElementsFromWeightedArray(tasksCopy, gameSettings.tasksPerPlayer));
 
-            //goes through the task clone and modifies the weights of each task if it was selected
-            tasksCopy.forEach( task => {
-                playerTasks.forEach( playerTask => {
-                    if(playerTask.name === task.name && playerTask.location === task.location){
-                        task.weight *= gameSettings.weightMultiplierAfterTaskWasChosen; 
-                    }
-                })
-            });
+        //goes through the task clone and modifies the weights of each task if it was selected
+        tasksCopy.forEach( task => {
+            playerTasks.forEach( playerTask => {
+                if(playerTask.name === task.name && playerTask.location === task.location){
+                    task.weight *= gameSettings.weightMultiplierAfterTaskWasChosen; 
+                }
+            })
+        });
 
-            evaluateTasksDescription(playerTasks);
+        evaluateTasksDescription(playerTasks);
 
-            player.tasks = playerTasks;
-        }
+        player.tasks = playerTasks;
         
         player.tasksCompleted = 0;
     })
@@ -646,14 +643,7 @@ function distributeRoles(){
             let chosenRole = pickElementsFromWeightedArray(Object.values(roles[teamToAssign]), 1)[0];
 
             const playerToAssignRoleTo = players[randPlayerIndex];
-            if(playerToAssignRoleTo.playerName === "Marianne"){
-                if(teamToAssign === "evil")
-                    continue; //cannot be evil
-                else
-                    playerToAssignRoleTo.role = roles.neutral.executioner;
-            } else {
-                playerToAssignRoleTo.role = chosenRole;
-            }
+            playerToAssignRoleTo.role = chosenRole;
             
             chosenRole.weight *= gameSettings.weightMultiplierAfterRoleWasChosen;
 
