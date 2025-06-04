@@ -36,10 +36,64 @@
     
     "tasks": [
         {
-            "name": "test",
-            "location": ["test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test"],
-            "desc": "test",
+            "name": "swipe card",
+            "location": ["laundry", "office"],
+            "desc": "swipe the card {{{ let times = chance(.9) ? randint(1,6) : randint(20, 30); let text = times === 1 ? 'time 😎' : (times < 20 ? 'times' : 'times 😭'); return times+' '+text}}}",
             "weight": 1
+        },
+        {
+            "name": "connect wires",
+            "location": ["bedroom", "kitchen"],
+            "desc": "make these connections without crossing any lines:<br>{{{ let result = []; let numConnections = randint(6, 8); for(let i = 0; i < numConnections; i++) { let let1 = toLetter(randint(1,6)); let let2 = toLetter(randint(1,6)); if(let1 === let2){ i--; continue; } let connection = let1+let2;let inverseConnection = let2+let1; if(result.includes(connection) || result.includes(inverseConnection)){ i--; continue; } result.push(connection); } return result.join(' ');}}}",
+            "weight": 1
+        },
+        {
+            "name": "test flexibility",
+            "location": ["living room"],
+            "desc": "do the following twister moves (if it's too hard, replace feet with hands):<br>{{{let result = ''; let bodyParts = shuffle(['left hand&nbsp;','right hand','left foot&nbsp;','right foot']); let colors = ['red', 'yellow', 'green', 'blue']; for(let i = 0; i < 4; i++){ let bodyPart = bodyParts[i]; result += `<span class=\"bold ${choose(colors)}\"> ${bodyPart} </span>`; if(i === 2){ result += '<br>'; } } for(let i = 0; i < 2; i++){ result += `<span class=\"bold ${choose(colors)}\"> ${choose(bodyParts)} </span>`; } return result;}}}",
+            "weight": 1
+        },
+        {
+            "name": "navigate maze",
+            "location": ["dining room"],
+            "desc": "move the marker to {{randint(1,10)+toLetter(randint(1,10))}} without crossing over any walls",
+            "weight": 1
+        },
+        {
+            "name": "calculate probability",
+            "location": ["laundry"],
+            "desc": "roll the dice until you get {{choose(['doubles','a roll that adds to '+randint(4,10)])}}",
+            "weight": 1
+        },
+        {
+            "name": "shoot meteors",
+            "location": ["living room"],
+            "desc": "throw {{randint(3,5)}} ping pong balls into basket"
+        },
+        {
+            "name": "start reactor",
+            "location": ["garage"],
+            "desc": "beat level {{randint(4,6)}} of the simon says game"
+        },
+        {
+            "name": "increase festivity",
+            "location": ["garage"],
+            "desc": "get a balloon and give it to another player. you cannot do other tasks while holding a ballon"
+        },
+        {
+            "name": "organize tea packets",
+            "location": ["kitchen"],
+            "desc": "put the tea packets in this order: {{shuffle(['Chamolile & Lavender', 'Pure Peppermint', 'Earl Grey', 'Organic Chai', 'Passion', 'Lemon & Ginger']).join(', ')}}"
+        },
+        {
+            "name": "sort cards",
+            "location": ["entrance", "closet"],
+            "desc": "sort the cards in numerical order, mix when done"
+        },
+        {
+            "name": "create artwork",
+            "location": ["living room"],
+            "desc": "in a quadrant of the paper, draw a picture of the {{choose(['high heel', 'apple', 'doll', 'cup', 'bell'])}}"
         }
     ],
 
@@ -53,7 +107,7 @@
         },
         {
             "name": "reactor",
-            "location": "reactor",
+            "location": "garage",
             "specialProperties": ["two_player_fix"],
             "desc": "fix reactor",
             "timeLeft": 50
