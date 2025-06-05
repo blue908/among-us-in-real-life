@@ -48,7 +48,7 @@ Currently, there are three hard-coded properties that a role can have.
 - ### Executioner
   - Wins if their target gets voted out
 
-None of these properties are tied to a certain team and you can mix and match them however you want.
+None of these properties are tied to a certain team and you can mix and match them however you want. Additionally, roles do *not* have to based on them. There are many interesting roles that have nothing to do with these properties.
 
 ## Wiki
 
