@@ -13,15 +13,16 @@ This is a web application made with Node.js that allows you to play Among Us in 
   
 You can configure tasks, sabotages, roles, and various settings easily using JSON files.
 
+## Main UI
+
+<img src="https://github.com/blue908/among-us-in-real-life/blob/main/assets/images/main-ui.png" width="500" />
+
 ## Setup
 
 - Download Node.js [here](https://nodejs.org/) if you haven't already.
 - Run `npm install` once, and `npm start` every time you want to start up your server.
 - To connect to the server, you can go to `localhost:3000`.
 - Everyone else should should type in your computer's local ip address.
-  
-###### *If that didn't make sense, you can go [here](https://example.com/) for a simpler guide.*
-###### *(this just goes to example.com right now because this page has not been made yet)*
 
 ## Starting the Game
 - To start the game, someone has to connect as the host. To do this, simply put "host" as your name.
