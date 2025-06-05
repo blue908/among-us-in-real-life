@@ -123,24 +123,26 @@
     "gameSettings": {
         "numEvil": 1,
         "numNeutral": 0,
-        "tasksPerPlayer": 4,
-        "weightMultiplierAfterTaskWasChosen": 0.5,
-        "taskbarEnabled": true,
-        "taskbarDelay": 5,
-        "neutralChance": 0,
-        "confirmEjects": true,
-        "weightMultiplierAfterRoleWasChosen": 0.3,
-        "advancedRoleNumbers": [
+		"advancedRoleNumbers": [
             {
-                "weight": 0,
+                "weight": 1,
                 "numEvil": 1,
                 "numNeutral": 2.5
             },
             {
                 "weight": 1,
-                "numEvil": 1,
-                "numNeutral": 0
+                "numEvil": 2,
+                "numNeutral": 0.5
             }
-        ]
+        ],
+
+        "tasksPerPlayer": 4,
+        "taskbarEnabled": true,
+        "taskbarDelay": 15,
+
+        "confirmEjects": true,
+
+		"weightMultiplierAfterTaskWasChosen": 0.5,
+        "weightMultiplierAfterRoleWasChosen": 0.3
     }
 }
