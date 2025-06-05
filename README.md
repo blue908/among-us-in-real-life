@@ -21,7 +21,7 @@ You can configure tasks, sabotages, roles, and various settings easily using JSO
 - Everyone else should should type in your computer's local ip address.
   
 ###### *If that didn't make sense, you can go [here](https://example.com/) for a simpler guide.*
-*(links to the wiki just go to example.com right now because the wiki is not done)*
+###### *(this just goes to example.com right now because this page has not been made yet)*
 
 ## Starting the Game
 - To start the game, someone has to connect as the host. To do this, simply put "host" as your name.
@@ -30,7 +30,7 @@ You can configure tasks, sabotages, roles, and various settings easily using JSO
 
 ## Configuration
 - Before starting a game, you should probably configure the tasks, sabotages, roles, and settings.
-- A detailed guide on how to do this can be found [here](https://example.com/).
+- A detailed guide on how to do this can be found [here]([https://example.com/](https://github.com/blue908/among-us-in-real-life/wiki/Configuring-Settings)).
 
 ## Roles
 
@@ -51,4 +51,4 @@ None of these properties are tied to a certain team and you can mix and match th
 
 ## Wiki
 
-There is a lot more information about this project in [the wiki](https://example.com/).
+There is a lot more information about this project in [the wiki](https://github.com/blue908/among-us-in-real-life/wiki).
