@@ -30,7 +30,7 @@ You can configure tasks, sabotages, roles, and various settings easily using JSO
 
 ## Configuration
 - Before starting a game, you should probably configure the tasks, sabotages, roles, and settings.
-- A detailed guide on how to do this can be found [here]([https://example.com/](https://github.com/blue908/among-us-in-real-life/wiki/Configuring-Settings)).
+- A detailed guide on how to do this can be found [here](https://github.com/blue908/among-us-in-real-life/wiki/Configuring-Settings).
 
 ## Roles
 
